@@ -1,1 +1,26 @@
-Thos is test file for jenkins .
+This is test file for jenkins .
+Jenkins to clone a repository on Github :-
+===================================================
+	  
+Open git bash on the specified location where the file is 
+	  git init
+	  git status
+    git add *
+	  git commit -m "jenkins commit"
+    
+ steps to copy file from one to other location in powershell
+ ==================================================================
+ 1)Open Jenkin Dashboard create a job .
+ 2)Go to "🔴General" section Check mark on "✅Github Project" and give the Project URL(The URL for the Page,ontop)
+ On the "General"section click on "Advanced" tab check "✅Use Customworkspace" (D:\Jfolder) to clone the Repository on the 
+ specified location along With C:\Jenkins folder .
+ 3)Then go to "🔴Source CodeManagementSection" check on "✅Git" give the repository URL(From Clone or Download option,Greencolour).
+ 4)On the credential section give the Username and pwd to open Github account.
+ 5)Then go to "🔴Build Environment" section Check the box "✅Delete workspace before build starts" ,To 
+ delete the folder before every build .
+ 6)Go to "🔴Build" Section "Add BuildStep" check "✅PowerShell" And Add the commands on this (We have to Download Powershell Plugin).
+PS D:\Jenkinsfile> new-item -itemType Directory "Jfolder"
+PS D:\Jenkinsfile> dir
+PS D:\Jenkinsfile> copy-item .\demo.txt '.\Jfolder'
+PS D:\Jenkinsfile> Get-Content D:\Jenkinsfile\Jfolder\demo.txt (to see the content)
+PS D:\Jenkinsfile> Add-Content D:\Jenkinsfile\Jfolder\demo.txt "Adding new line"
